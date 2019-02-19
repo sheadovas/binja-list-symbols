@@ -2,7 +2,7 @@ from binaryninja import *
 
 def list_symbols(bv,function):
     fmt_xrefs = "- `{}`, **xrefs:** {}"
-    fmt_xref_el = "[{}+{:X}](binaryninja://?address={}) (`0x{:08X}`)"
+    fmt_xref_el = "[{}+{:X}](binaryninja://?expr=0x{:x})"
     md_text = "# Symbols\n\n"
 
     def parse_symbol(refs, symbol):
@@ -13,7 +13,6 @@ def list_symbols(bv,function):
             refs.append(fmt_xref_el.format(
                 r.function.name, 
                 r.address - r.function.start,
-                r.address,
                 r.address))
         return fmt_xrefs.format(symbol.full_name, ", ".join(refs))
     
@@ -31,7 +30,7 @@ def list_symbols(bv,function):
     
     md.sort()
     md_text += "\n".join(md)
-    show_markdown_report("Symbols Listing", md_text)
+    bv.show_markdown_report("Symbols Listing", md_text)
 
 
 PluginCommand.register_for_address("List External Symbols", "List detected symbols", list_symbols)

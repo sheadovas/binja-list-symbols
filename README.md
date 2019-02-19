@@ -7,7 +7,7 @@ A plugin that extracts symbols found inside binary with xrefs (like IDA subview 
 ## Features
 
 - [x] List symbols with xrefs.
-- [ ] Redirect xrefs urls to correct addresses in opened Binja.
+- [x] Redirect xrefs urls to correct addresses in opened Binja.
 
 ## Install
 
