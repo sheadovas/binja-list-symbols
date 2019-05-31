@@ -1,6 +1,10 @@
 # List Symbols (v0.1b)
 Author: **sheadovas**
 
+## Depracated
+
+From version 1.1.1689 this plugin is no longer needed, indetical functionallity is now available in Binja: `View` -> `Triage Summary`.
+
 ## Description:
 A plugin that extracts symbols found inside binary with xrefs (like IDA subview imports/exports)
 
